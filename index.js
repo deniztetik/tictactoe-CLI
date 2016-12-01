@@ -108,7 +108,8 @@ function getMove(callback) {
 
 function validateMove(move) {
   if ('123456789'.indexOf(move) === -1) return false
-  if (board[Math.floor((move - 1) / 3)][(move - 1) % 3] !== '.') return false
+  if (board[Math.floor((move - 1) / 3)] &&
+      board[Math.floor((move - 1) / 3)][(move - 1) % 3] !== '.') return false
   board[Math.floor((move - 1) / 3)][(move - 1) % 3] = turn
   return true
 }
